@@ -18,7 +18,7 @@ public class LoginPage extends javax.swing.JFrame {
      */
     public LoginPage() {
         initComponents();
-        this.setSize(600,400);
+        this.setSize(700,500);
     }
 
     /**
@@ -40,7 +40,9 @@ public class LoginPage extends javax.swing.JFrame {
         EmpRadio = new javax.swing.JRadioButton();
         AdminRadio = new javax.swing.JRadioButton();
         PassField = new javax.swing.JPasswordField();
-        jLabel2 = new javax.swing.JLabel();
+        SignUpBut = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        ExitBut = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -48,7 +50,7 @@ public class LoginPage extends javax.swing.JFrame {
         LoginLabel.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         LoginLabel.setText("Login");
         getContentPane().add(LoginLabel);
-        LoginLabel.setBounds(290, 100, 50, 17);
+        LoginLabel.setBounds(270, 60, 50, 17);
 
         UserField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -56,11 +58,11 @@ public class LoginPage extends javax.swing.JFrame {
             }
         });
         getContentPane().add(UserField);
-        UserField.setBounds(200, 170, 200, 30);
+        UserField.setBounds(190, 130, 200, 30);
 
         UserLabel.setText("Username");
         getContentPane().add(UserLabel);
-        UserLabel.setBounds(200, 150, 110, 14);
+        UserLabel.setBounds(190, 110, 110, 17);
 
         SignBut.setText("Sign In");
         SignBut.addActionListener(new java.awt.event.ActionListener() {
@@ -69,23 +71,23 @@ public class LoginPage extends javax.swing.JFrame {
             }
         });
         getContentPane().add(SignBut);
-        SignBut.setBounds(250, 310, 120, 30);
+        SignBut.setBounds(240, 270, 120, 30);
 
         PassLabel.setText("Password");
         getContentPane().add(PassLabel);
-        PassLabel.setBounds(200, 200, 100, 14);
+        PassLabel.setBounds(190, 160, 100, 17);
 
         CustRadio.setText("Customer");
         getContentPane().add(CustRadio);
-        CustRadio.setBounds(130, 260, 100, 23);
+        CustRadio.setBounds(120, 220, 100, 24);
 
         EmpRadio.setText("Employee");
         getContentPane().add(EmpRadio);
-        EmpRadio.setBounds(250, 260, 100, 23);
+        EmpRadio.setBounds(240, 220, 100, 24);
 
         AdminRadio.setText("Admin");
         getContentPane().add(AdminRadio);
-        AdminRadio.setBounds(370, 260, 90, 23);
+        AdminRadio.setBounds(360, 220, 90, 24);
 
         PassField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -93,12 +95,29 @@ public class LoginPage extends javax.swing.JFrame {
             }
         });
         getContentPane().add(PassField);
-        PassField.setBounds(200, 220, 200, 30);
+        PassField.setBounds(190, 180, 200, 30);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\student\\Downloads\\money(2).jpg")); // NOI18N
-        jLabel2.setText("jLabel2");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(0, 0, 610, 400);
+        SignUpBut.setText("Sign Up");
+        SignUpBut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SignUpButActionPerformed(evt);
+            }
+        });
+        getContentPane().add(SignUpBut);
+        SignUpBut.setBounds(260, 310, 80, 30);
+
+        jLabel1.setText("New User? ");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(180, 320, 77, 17);
+
+        ExitBut.setText("Exit");
+        ExitBut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ExitButActionPerformed(evt);
+            }
+        });
+        getContentPane().add(ExitBut);
+        ExitBut.setBounds(500, 30, 70, 30);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -115,7 +134,9 @@ public class LoginPage extends javax.swing.JFrame {
                     {
                         if(User.equals("cust")&&word.equals("pass"))
                         {
-                            JOptionPane.showMessageDialog(this,"Login Succesful");
+                            CustomerPortal cp = new CustomerPortal();
+                            this.setVisible(false);
+                            cp.setVisible(true);
                         }
                         else
                         {
@@ -150,6 +171,17 @@ public class LoginPage extends javax.swing.JFrame {
     private void PassFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PassFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_PassFieldActionPerformed
+
+    private void SignUpButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignUpButActionPerformed
+           SignUpPage sup = new SignUpPage();
+           this.setVisible(false);
+           sup.setVisible(true);
+           
+    }//GEN-LAST:event_SignUpButActionPerformed
+
+    private void ExitButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitButActionPerformed
+                            System.exit(0);        // TODO add your handling code here:
+    }//GEN-LAST:event_ExitButActionPerformed
 
     /**
      * @param args the command line arguments
@@ -190,13 +222,15 @@ public class LoginPage extends javax.swing.JFrame {
     private javax.swing.JRadioButton AdminRadio;
     private javax.swing.JRadioButton CustRadio;
     private javax.swing.JRadioButton EmpRadio;
+    private javax.swing.JButton ExitBut;
     private javax.swing.JLabel LoginLabel;
     private javax.swing.JPasswordField PassField;
     private javax.swing.JLabel PassLabel;
     private javax.swing.JButton SignBut;
+    private javax.swing.JButton SignUpBut;
     private javax.swing.JTextField UserField;
     private javax.swing.JLabel UserLabel;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JOptionPane jOptionPane1;
     // End of variables declaration//GEN-END:variables
 

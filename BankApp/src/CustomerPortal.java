@@ -14,6 +14,7 @@ public class CustomerPortal extends javax.swing.JFrame {
      * Creates new form CustomerPortal
      */
     public CustomerPortal() {
+        this.setSize(400,300);
         initComponents();
     }
 
@@ -26,31 +27,101 @@ public class CustomerPortal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton2 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
+        jLabel1 = new javax.swing.JLabel();
+        TransactBut = new javax.swing.JButton();
+        LoanBut = new javax.swing.JButton();
+        IssueBut = new javax.swing.JButton();
+        jMenuBar2 = new javax.swing.JMenuBar();
+        MyProfile = new javax.swing.JMenu();
+        DetailsMenuItem = new javax.swing.JMenuItem();
+        LogOutMenu = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().setLayout(new java.awt.GridLayout());
 
-        jButton2.setText("Log Out");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 420, -1, -1));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/person.png"))); // NOI18N
+        getContentPane().add(jLabel1);
 
-        jButton1.setText("jButton1");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, -1, -1));
+        TransactBut.setForeground(new java.awt.Color(36, 49, 249));
+        TransactBut.setText("Transact");
+        TransactBut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TransactButActionPerformed(evt);
+            }
+        });
+        getContentPane().add(TransactBut);
 
-        jMenu1.setText("File");
-        jMenuBar1.add(jMenu1);
+        LoanBut.setText("Apply For Loan");
+        LoanBut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LoanButActionPerformed(evt);
+            }
+        });
+        getContentPane().add(LoanBut);
 
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
+        IssueBut.setText("Raise Issue");
+        IssueBut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IssueButActionPerformed(evt);
+            }
+        });
+        getContentPane().add(IssueBut);
 
-        setJMenuBar(jMenuBar1);
+        MyProfile.setText("My Profile");
+
+        DetailsMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, 0));
+        DetailsMenuItem.setText("Details");
+        DetailsMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DetailsMenuItemActionPerformed(evt);
+            }
+        });
+        MyProfile.add(DetailsMenuItem);
+
+        LogOutMenu.setText("Log Out");
+        LogOutMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LogOutMenuActionPerformed(evt);
+            }
+        });
+        MyProfile.add(LogOutMenu);
+
+        jMenuBar2.add(MyProfile);
+
+        setJMenuBar(jMenuBar2);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void DetailsMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DetailsMenuItemActionPerformed
+                    DetailsPage dp = new DetailsPage();
+                    this.setVisible(false);
+                    dp.setVisible(true);// TODO add your handling code here:
+    }//GEN-LAST:event_DetailsMenuItemActionPerformed
+
+    private void LogOutMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogOutMenuActionPerformed
+                      this.setVisible(false);
+                      LoginPage lp = new LoginPage();
+                      lp.setVisible(true);
+    }//GEN-LAST:event_LogOutMenuActionPerformed
+
+    private void TransactButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TransactButActionPerformed
+                                    TransactPage tp = new TransactPage();
+                                    this.setVisible(false);
+                                    tp.setVisible(true);
+    }//GEN-LAST:event_TransactButActionPerformed
+
+    private void IssueButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IssueButActionPerformed
+                                    IssuePage ip = new IssuePage();
+                                    this.setVisible(false);
+                                    ip.setVisible(true);// TODO add your handling code here:
+    }//GEN-LAST:event_IssueButActionPerformed
+
+    private void LoanButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoanButActionPerformed
+                                     LoanApply la = new LoanApply();
+                                     this.setVisible(false);
+                                     la.setVisible(true);// TODO add your handling code here:
+    }//GEN-LAST:event_LoanButActionPerformed
 
     /**
      * @param args the command line arguments
@@ -88,10 +159,13 @@ public class CustomerPortal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem DetailsMenuItem;
+    private javax.swing.JButton IssueBut;
+    private javax.swing.JButton LoanBut;
+    private javax.swing.JMenuItem LogOutMenu;
+    private javax.swing.JMenu MyProfile;
+    private javax.swing.JButton TransactBut;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JMenuBar jMenuBar2;
     // End of variables declaration//GEN-END:variables
 }
