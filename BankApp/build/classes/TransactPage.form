@@ -75,16 +75,25 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Deposit"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DepButActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="WithBut">
       <Properties>
         <Property name="text" type="java.lang.String" value="Withdraw"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="WithButActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="AsBut">
       <Properties>
         <Property name="text" type="java.lang.String" value="Account Status"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AsButActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="BackBut">
       <Properties>
@@ -98,6 +107,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Raise Issue"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="IssueButActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>

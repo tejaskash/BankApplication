@@ -113,7 +113,7 @@ public class IssuePage extends javax.swing.JFrame {
 
     private void BackButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButActionPerformed
                         CustomerPortal cp = new CustomerPortal();
-                        this.setVisible(false);
+                        this.dispose();
                         cp.setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_BackButActionPerformed
 

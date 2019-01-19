@@ -6,7 +6,7 @@
 
 /**
  *
- * @author student
+ * @author tejas
  */
 public class CustomerPortal extends javax.swing.JFrame {
 
@@ -14,7 +14,6 @@ public class CustomerPortal extends javax.swing.JFrame {
      * Creates new form CustomerPortal
      */
     public CustomerPortal() {
-        this.setSize(400,300);
         initComponents();
     }
 
@@ -28,13 +27,12 @@ public class CustomerPortal extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        TransactBut = new javax.swing.JButton();
-        LoanBut = new javax.swing.JButton();
-        IssueBut = new javax.swing.JButton();
-        jMenuBar2 = new javax.swing.JMenuBar();
-        MyProfile = new javax.swing.JMenu();
-        DetailsMenuItem = new javax.swing.JMenuItem();
-        LogOutMenu = new javax.swing.JMenuItem();
+        jButton1 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.GridLayout());
@@ -42,86 +40,74 @@ public class CustomerPortal extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/person.png"))); // NOI18N
         getContentPane().add(jLabel1);
 
-        TransactBut.setForeground(new java.awt.Color(36, 49, 249));
-        TransactBut.setText("Transact");
-        TransactBut.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setText("Transact");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TransactButActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(TransactBut);
+        getContentPane().add(jButton1);
 
-        LoanBut.setText("Apply For Loan");
-        LoanBut.addActionListener(new java.awt.event.ActionListener() {
+        jButton3.setText("Apply For Loan");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LoanButActionPerformed(evt);
+                jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(LoanBut);
+        getContentPane().add(jButton3);
 
-        IssueBut.setText("Raise Issue");
-        IssueBut.addActionListener(new java.awt.event.ActionListener() {
+        jButton2.setText("Raise Issue");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                IssueButActionPerformed(evt);
+                jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(IssueBut);
+        getContentPane().add(jButton2);
 
-        MyProfile.setText("My Profile");
+        jMenu1.setText("File");
 
-        DetailsMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, 0));
-        DetailsMenuItem.setText("Details");
-        DetailsMenuItem.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem1.setText("Log Out");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DetailsMenuItemActionPerformed(evt);
+                jMenuItem1ActionPerformed(evt);
             }
         });
-        MyProfile.add(DetailsMenuItem);
+        jMenu1.add(jMenuItem1);
 
-        LogOutMenu.setText("Log Out");
-        LogOutMenu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LogOutMenuActionPerformed(evt);
-            }
-        });
-        MyProfile.add(LogOutMenu);
+        jMenuBar1.add(jMenu1);
 
-        jMenuBar2.add(MyProfile);
-
-        setJMenuBar(jMenuBar2);
+        setJMenuBar(jMenuBar1);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void DetailsMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DetailsMenuItemActionPerformed
-                    DetailsPage dp = new DetailsPage();
-                    this.setVisible(false);
-                    dp.setVisible(true);// TODO add your handling code here:
-    }//GEN-LAST:event_DetailsMenuItemActionPerformed
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+                this.dispose();
+                LoginPage lp = new LoginPage();
+                lp.setVisible(true);
+// TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
-    private void LogOutMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogOutMenuActionPerformed
-                      this.setVisible(false);
-                      LoginPage lp = new LoginPage();
-                      lp.setVisible(true);
-    }//GEN-LAST:event_LogOutMenuActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+                  this.dispose();
+                  TransactPage tp = new TransactPage();
+                  tp.setVisible(true);
+                 // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void TransactButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TransactButActionPerformed
-                                    TransactPage tp = new TransactPage();
-                                    this.setVisible(false);
-                                    tp.setVisible(true);
-    }//GEN-LAST:event_TransactButActionPerformed
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+                   this.dispose();
+                   LoanApply lp = new LoanApply();
+                   lp.setVisible(true);
+                        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void IssueButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IssueButActionPerformed
-                                    IssuePage ip = new IssuePage();
-                                    this.setVisible(false);
-                                    ip.setVisible(true);// TODO add your handling code here:
-    }//GEN-LAST:event_IssueButActionPerformed
-
-    private void LoanButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoanButActionPerformed
-                                     LoanApply la = new LoanApply();
-                                     this.setVisible(false);
-                                     la.setVisible(true);// TODO add your handling code here:
-    }//GEN-LAST:event_LoanButActionPerformed
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+                     this.dispose();
+                     IssuePage ip = new IssuePage();
+                     ip.setVisible(true);
+                     
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -159,13 +145,12 @@ public class CustomerPortal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem DetailsMenuItem;
-    private javax.swing.JButton IssueBut;
-    private javax.swing.JButton LoanBut;
-    private javax.swing.JMenuItem LogOutMenu;
-    private javax.swing.JMenu MyProfile;
-    private javax.swing.JButton TransactBut;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     // End of variables declaration//GEN-END:variables
 }

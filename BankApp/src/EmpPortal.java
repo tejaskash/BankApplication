@@ -26,21 +26,85 @@ public class EmpPortal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jLabel1 = new javax.swing.JLabel();
+        SalSlip = new javax.swing.JButton();
+        ContSup = new javax.swing.JButton();
+        TC = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new java.awt.GridLayout());
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/person.png"))); // NOI18N
+        getContentPane().add(jLabel1);
+
+        SalSlip.setText("View Salary Slip");
+        SalSlip.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SalSlipActionPerformed(evt);
+            }
+        });
+        getContentPane().add(SalSlip);
+
+        ContSup.setText("Submit Report");
+        ContSup.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ContSupActionPerformed(evt);
+            }
+        });
+        getContentPane().add(ContSup);
+
+        TC.setText("Terms&Conditions ");
+        TC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TCActionPerformed(evt);
+            }
+        });
+        getContentPane().add(TC);
+
+        jMenu1.setText("File");
+
+        jMenuItem1.setText("Log Out");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem1);
+
+        jMenuBar1.add(jMenu1);
+
+        setJMenuBar(jMenuBar1);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+                    this.dispose();
+                    LoginPage lp = new LoginPage();
+                    lp.setVisible(true);// TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void SalSlipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalSlipActionPerformed
+                    this.dispose();
+                    SalarySlip ss = new SalarySlip();
+                    ss.setVisible(true);// TODO add your handling code here:
+    }//GEN-LAST:event_SalSlipActionPerformed
+
+    private void ContSupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContSupActionPerformed
+                    ReportSubmit rs = new ReportSubmit();
+                    this.dispose();
+                    rs.setVisible(true);// TODO add your handling code here:
+    }//GEN-LAST:event_ContSupActionPerformed
+
+    private void TCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TCActionPerformed
+                    TermCond tc = new TermCond();
+                    this.dispose();
+                    tc.setVisible(true);
+// TODO add your handling code here:
+    }//GEN-LAST:event_TCActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +142,12 @@ public class EmpPortal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ContSup;
+    private javax.swing.JButton SalSlip;
+    private javax.swing.JButton TC;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     // End of variables declaration//GEN-END:variables
 }

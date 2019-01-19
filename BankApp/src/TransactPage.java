@@ -17,7 +17,7 @@ public class TransactPage extends javax.swing.JFrame {
         this.setSize(400,300);
         initComponents();
     }
-
+                    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -37,10 +37,25 @@ public class TransactPage extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         DepBut.setText("Deposit");
+        DepBut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DepButActionPerformed(evt);
+            }
+        });
 
         WithBut.setText("Withdraw");
+        WithBut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                WithButActionPerformed(evt);
+            }
+        });
 
         AsBut.setText("Account Status");
+        AsBut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AsButActionPerformed(evt);
+            }
+        });
 
         BackBut.setText("Back");
         BackBut.addActionListener(new java.awt.event.ActionListener() {
@@ -50,6 +65,11 @@ public class TransactPage extends javax.swing.JFrame {
         });
 
         IssueBut.setText("Raise Issue");
+        IssueBut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IssueButActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
         jLabel1.setText("Transact Page");
@@ -100,9 +120,37 @@ public class TransactPage extends javax.swing.JFrame {
 
     private void BackButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButActionPerformed
                                  CustomerPortal cp = new CustomerPortal();
-                                 this.setVisible(false);
+                                 this.dispose();
                                  cp.setVisible(true);
     }//GEN-LAST:event_BackButActionPerformed
+
+    private void DepButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DepButActionPerformed
+                    this.dispose();
+                    DepositPage dp = new DepositPage();
+                    dp.setVisible(true);
+                    
+                    // TODO add yourbp. handling code here:
+    }//GEN-LAST:event_DepButActionPerformed
+
+    private void AsButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AsButActionPerformed
+                    this.dispose();
+                    BalancePage bp = new BalancePage();
+                    bp.setVisible(true);
+                    // TODO add your handling code here:
+    }//GEN-LAST:event_AsButActionPerformed
+
+    private void WithButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WithButActionPerformed
+                    this.dispose();
+                    WithPage wp = new WithPage();
+                    wp.setVisible(true);// TODO add your handling code here:
+    }//GEN-LAST:event_WithButActionPerformed
+
+    private void IssueButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IssueButActionPerformed
+                     this.dispose();
+                     IssuePage ip = new IssuePage();
+                     ip.setVisible(true);
+// TODO add your handling code here:
+    }//GEN-LAST:event_IssueButActionPerformed
 
     /**
      * @param args the command line arguments

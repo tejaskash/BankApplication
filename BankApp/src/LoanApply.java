@@ -1,3 +1,6 @@
+
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -35,6 +38,7 @@ public class LoanApply extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
         SubmitBut = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -76,7 +80,15 @@ public class LoanApply extends javax.swing.JFrame {
                 SubmitButActionPerformed(evt);
             }
         });
-        getContentPane().add(SubmitBut, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 190, -1, -1));
+        getContentPane().add(SubmitBut, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, -1, -1));
+
+        jButton1.setText("Exit");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 220, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -90,8 +102,15 @@ public class LoanApply extends javax.swing.JFrame {
     }//GEN-LAST:event_DurationCbActionPerformed
 
     private void SubmitButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitButActionPerformed
-        // TODO add your handling code here:
+                        JOptionPane.showMessageDialog(this,"Your Application Is Successful"); 
+                        // TODO add your handling code here:
     }//GEN-LAST:event_SubmitButActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+                                this.dispose();
+                                CustomerPortal cp = new CustomerPortal();
+                                cp.setVisible(true);// TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -132,6 +151,7 @@ public class LoanApply extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> DurationCb;
     private javax.swing.JTextField PrincAmt;
     private javax.swing.JButton SubmitBut;
+    private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

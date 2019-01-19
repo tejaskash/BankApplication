@@ -16,7 +16,9 @@ public class LoginPage extends javax.swing.JFrame {
     /**
      * Creates new form LoginPage
      */
+    public static long bal = 10000;
     public LoginPage() {
+        bal = 10000;
         initComponents();
         this.setSize(700,500);
     }
@@ -38,11 +40,11 @@ public class LoginPage extends javax.swing.JFrame {
         PassLabel = new javax.swing.JLabel();
         CustRadio = new javax.swing.JRadioButton();
         EmpRadio = new javax.swing.JRadioButton();
-        AdminRadio = new javax.swing.JRadioButton();
         PassField = new javax.swing.JPasswordField();
         SignUpBut = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         ExitBut = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -50,7 +52,7 @@ public class LoginPage extends javax.swing.JFrame {
         LoginLabel.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         LoginLabel.setText("Login");
         getContentPane().add(LoginLabel);
-        LoginLabel.setBounds(270, 60, 50, 17);
+        LoginLabel.setBounds(270, 70, 50, 17);
 
         UserField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -82,12 +84,13 @@ public class LoginPage extends javax.swing.JFrame {
         CustRadio.setBounds(120, 220, 100, 24);
 
         EmpRadio.setText("Employee");
+        EmpRadio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EmpRadioActionPerformed(evt);
+            }
+        });
         getContentPane().add(EmpRadio);
-        EmpRadio.setBounds(240, 220, 100, 24);
-
-        AdminRadio.setText("Admin");
-        getContentPane().add(AdminRadio);
-        AdminRadio.setBounds(360, 220, 90, 24);
+        EmpRadio.setBounds(350, 220, 100, 24);
 
         PassField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -117,7 +120,12 @@ public class LoginPage extends javax.swing.JFrame {
             }
         });
         getContentPane().add(ExitBut);
-        ExitBut.setBounds(500, 30, 70, 30);
+        ExitBut.setBounds(280, 350, 50, 30);
+
+        jLabel2.setFont(new java.awt.Font("Ubuntu", 1, 20)); // NOI18N
+        jLabel2.setText("The Bank");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(250, 20, 100, 24);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -130,12 +138,12 @@ public class LoginPage extends javax.swing.JFrame {
                     String User = UserField.getText();
                     char Pass[] = PassField.getPassword();
                     String word = new String(Pass);
-                    if(CustRadio.isSelected()&&!EmpRadio.isSelected()&&!AdminRadio.isSelected())
+                    if(CustRadio.isSelected()&&!EmpRadio.isSelected())
                     {
-                        if(User.equals("cust")&&word.equals("pass"))
+                        if(User.equals("cust1")||User.equals("cust2")&&word.equals("pass1")||word.equals("pass2"))
                         {
                             CustomerPortal cp = new CustomerPortal();
-                            this.setVisible(false);
+                            this.dispose();
                             cp.setVisible(true);
                         }
                         else
@@ -143,27 +151,22 @@ public class LoginPage extends javax.swing.JFrame {
                             JOptionPane.showMessageDialog(this, "Invalid Credentials");
                         }
                     }
-                    else if(AdminRadio.isSelected()&&!CustRadio.isSelected()&&!EmpRadio.isSelected())
+                    else if(EmpRadio.isSelected()&&!CustRadio.isSelected())
                     {
-                        if(User.equals("admin")&&word.equals("pass"))
+                        if(User.equals("emp1")||User.equals("emp2")&&word.equals("pass1")||word.equals("pass2"))
                         {
-                            JOptionPane.showMessageDialog(this,"Login Succesful");
+                            this.dispose();
+                            EmpPortal ep = new EmpPortal();
+                            ep.setVisible(true);
                         }
                         else
                         {
                             JOptionPane.showMessageDialog(this, "Invalid Credentials");
                         }
                     }
-                    else if(EmpRadio.isSelected()&&!AdminRadio.isSelected()&&!CustRadio.isSelected())
+                    else
                     {
-                        if(User.equals("emp")&&word.equals("pass"))
-                        {
-                            JOptionPane.showMessageDialog(this,"Login Succesful");
-                        }
-                        else
-                        {
-                            JOptionPane.showMessageDialog(this, "Invalid Credentials");
-                        }
+                        JOptionPane.showMessageDialog(this, "Please Select User Type");
                     }
                     
     }//GEN-LAST:event_SignButActionPerformed
@@ -182,6 +185,10 @@ public class LoginPage extends javax.swing.JFrame {
     private void ExitButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitButActionPerformed
                             System.exit(0);        // TODO add your handling code here:
     }//GEN-LAST:event_ExitButActionPerformed
+
+    private void EmpRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmpRadioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EmpRadioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -219,7 +226,6 @@ public class LoginPage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JRadioButton AdminRadio;
     private javax.swing.JRadioButton CustRadio;
     private javax.swing.JRadioButton EmpRadio;
     private javax.swing.JButton ExitBut;
@@ -231,6 +237,7 @@ public class LoginPage extends javax.swing.JFrame {
     private javax.swing.JTextField UserField;
     private javax.swing.JLabel UserLabel;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JOptionPane jOptionPane1;
     // End of variables declaration//GEN-END:variables
 
